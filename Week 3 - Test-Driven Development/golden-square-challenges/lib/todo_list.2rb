@@ -1,0 +1,16 @@
+class TodoList
+  def initialize
+    @tasks = []
+  end
+  def list
+    @tasks
+  end
+  def add(task)
+    return @tasks << task unless @tasks.include?(task)
+    "Task already in list"
+  end
+  def complete(task)
+    return @tasks.delete(task) if @tasks.include?(task)
+    "This task isn't in your list"
+  end
+end
